@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        table{
+            border:1px solid;
+            border-collapse: collapse;
+            
+        }
+        tr{
+            border:1px solid;
+            border-collapse: collapse;
+            
+        }
+        td{
+            border:1px solid;
+            border-collapse: collapse;
+            width:50px;
+            height: 50px;
+        }
+        tr:nth-child(even) td:nth-child(even), tr:nth-child(odd) td:nth-child(odd){
+            background-color: rgb(50, 139, 5);
+            
+        }
+        tr:nth-child(odd) td:nth-child(even), tr:nth-child(odd) td:nth-child(even){
+            background-color: rgb(255, 255, 255);
+            
+        }
+        div  {
+            font-size: xx-large;
+        }
+           
+
+    </style>
+    <script>
+        var contador=0;
+        function celdaclick(ana){
+            //Este if valida si la celda tiene imagen de fondo o no
+            if((window.getComputedStyle(ana).backgroundImage)=="none" ) {
+                if(contador != 8){
+                    contador++; 
+                    ana.style="background-image:url(./reina.png); background-size: cover;";
+                } 
+                
+            }
+            else {
+                contador--;
+                ana.style="background-image:none;";
+            }
+            document.getElementById("div_contador").innerHTML="reinascolocadas:"+ contador;
+        }
+
+        function simulacion(){
+            alert("hola :D");
+        }
+
+        function reiniciar(cont){
+            var celdas=document.getElementById("tabla_ajedrez").getElementsByTagName("td");
+            for (let i = 0; i < celdas.length; i++) {
+                celdas[i].style="backgroundImage:none";    
+            }
+            contador = cont;
+            document.getElementById("div_contador").innerHTML="reinascolocadas:"+ contador;
+        }
+
+        function solucion1(){
+            reiniciar(8);
+            var celdas=document.getElementById("tabla_ajedrez");
+            celdas.rows[0].cells[4].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[1].cells[1].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[2].cells[3].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[3].cells[6].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[4].cells[2].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[5].cells[7].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[6].cells[5].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[7].cells[0].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            
+        }
+
+        function solucion2(){
+            reiniciar(8);
+            var celdas=document.getElementById("tabla_ajedrez");
+            celdas.rows[0].cells[4].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[1].cells[2].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[2].cells[7].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[3].cells[3].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[4].cells[6].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[5].cells[0].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[6].cells[5].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            celdas.rows[7].cells[1].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
+            
+        }
+    </script>
+</head>
+<body>
+    
+    <table id="tabla_ajedrez">
+        <tr>
+            <td onclick="celdaclick(this)"> </td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+        </tr>
+
+        <tr>
+            
+            <td ></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+            <td onclick="celdaclick(this)"></td>
+        </tr>
+    </table>
+    <div id="div_contador">
+        reinas colocadas: 0
+    </div>
+    <button onclick="simulacion()">
+        Simulación
+    </button>
+    <button onclick="reiniciar(0)">
+        Reiniciar
+    </button>
+    <button onclick="solucion1()">
+        Solución 1
+    </button>
+    <button onclick="solucion2()">
+        Solución 2
+    </button>
+
+</body>
+</html>
