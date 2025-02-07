@@ -1,12 +1,12 @@
-document.getElementById('darkModeToggle').addEventListener('click', function() {
-    document.body.classList.toggle('dark-mode');
+document.getElementById('ModoOscuro').addEventListener('click', function() {
+    document.body.classList.toggle('cambiar');
     
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    localStorage.setItem('modo', document.body.classList.contains('cambiar'));
 
-    this.innerText = document.body.classList.contains('dark-mode') ? "Modo Claro" : "Modo Oscuro";
+    this.innerText = document.body.classList.contains('cambiar') ? "Modo Claro" : "Modo Oscuro";
 });
 
-if (localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark-mode');
-    document.getElementById('darkModeToggle').innerText = "Modo Claro";
+if (localStorage.getItem('modo') === 'true') {
+    document.body.classList.add('cambiar');
+    document.getElementById('ModoOscuro').innerText = "Modo Claro";
 }

@@ -75,14 +75,14 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.section-title {
+.titulo {
     border-bottom: 2px solid #dee2e6;
     padding-bottom: 0.25rem;
     margin-bottom: 0.75rem;
     text-align: center;
 }
 
-.tech-tag {
+.tag {
     background-color: #ecf0f1;
     color: #2c3e50;
     padding: 2px 8px;
@@ -93,12 +93,12 @@ section {
     display: inline-block;
 }
 
-.job, .education-item, .project {
+.estudio, .proyecto {
     margin-bottom: 0.75rem;
     text-align: left; 
 }
 
-.job h4, .education-item h4, .project h4 {
+.estudio h4, .proyecto h4 {
     margin-bottom: 0.25rem;
 }
 
@@ -135,23 +135,23 @@ ul {
 }
 
 
-.dark-mode {
+.cambiar {
     background-color: #121212;
     color: white;
 }
 
-.dark-mode .container,
-.dark-mode section {
+.cambiar .container,
+.cambiar section {
     background-color: #1e1e1e;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
 
-.dark-mode .tech-tag {
+.cambiar .tag {
     background-color: #2c3e50;
     color: white;
 }
 
-#darkModeToggle {
+#ModoOscuro {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -167,15 +167,15 @@ ul {
     transition: background-color 0.3s, transform 0.2s;
 }
 
-#darkModeToggle:hover {
+#ModoOscuro:hover {
     background-color: #e67e22;
     transform: scale(1.05);
 }
 
-.dark-mode #darkModeToggle {
+.cambiar #ModoOscuro {
     background-color: #27ae60;
 }
 
-.dark-mode #darkModeToggle:hover {
+.cambiar #ModoOscuro:hover {
     background-color: #2ecc71;
 }
