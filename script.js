@@ -1,9 +1,12 @@
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita que el formulario se envíe
+document.getElementById('darkModeToggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 
-    // Simula el envío del formulario
-    setTimeout(function() {
-        document.getElementById('confirmationMessage').classList.remove('hidden');
-        document.getElementById('contactForm').reset();
-    }, 1000);
+    this.innerText = document.body.classList.contains('dark-mode') ? "Modo Claro" : "Modo Oscuro";
 });
+
+if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+    document.getElementById('darkModeToggle').innerText = "Modo Claro";
+}
