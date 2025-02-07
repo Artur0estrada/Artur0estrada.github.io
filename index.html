@@ -1,203 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <style>
-        table{
-            border:1px solid;
-            border-collapse: collapse;
-            
-        }
-        tr{
-            border:1px solid;
-            border-collapse: collapse;
-            
-        }
-        td{
-            border:1px solid;
-            border-collapse: collapse;
-            width:50px;
-            height: 50px;
-        }
-        tr:nth-child(even) td:nth-child(even), tr:nth-child(odd) td:nth-child(odd){
-            background-color: rgb(50, 139, 5);
-            
-        }
-        tr:nth-child(odd) td:nth-child(even), tr:nth-child(odd) td:nth-child(even){
-            background-color: rgb(255, 255, 255);
-            
-        }
-        div  {
-            font-size: xx-large;
-        }
-           
-
-    </style>
-    <script>
-        var contador=0;
-        function celdaclick(ana){
-            //Este if valida si la celda tiene imagen de fondo o no
-            if((window.getComputedStyle(ana).backgroundImage)=="none" ) {
-                if(contador != 8){
-                    contador++; 
-                    ana.style="background-image:url(./reina.png); background-size: cover;";
-                } 
-                
-            }
-            else {
-                contador--;
-                ana.style="background-image:none;";
-            }
-            document.getElementById("div_contador").innerHTML="reinas colocadas:"+ contador;
-        }
-
-        function simulacion(){
-            alert("Simulando");
-        }
-
-        function reiniciar(cont){
-            var celdas=document.getElementById("tabla_ajedrez").getElementsByTagName("td");
-            for (let i = 0; i < celdas.length; i++) {
-                celdas[i].style="backgroundImage:none";    
-            }
-            contador = cont;
-            document.getElementById("div_contador").innerHTML="reinascolocadas:"+ contador;
-        }
-
-        function solucion1(){
-            reiniciar(8);
-            var celdas=document.getElementById("tabla_ajedrez");
-            celdas.rows[0].cells[4].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[1].cells[1].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[2].cells[3].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[3].cells[6].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[4].cells[2].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[5].cells[7].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[6].cells[5].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[7].cells[0].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            
-        }
-
-        function solucion2(){
-            reiniciar(8);
-            var celdas=document.getElementById("tabla_ajedrez");
-            celdas.rows[0].cells[4].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[1].cells[2].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[2].cells[7].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[3].cells[3].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[4].cells[6].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[5].cells[0].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[6].cells[5].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            celdas.rows[7].cells[1].style="background-image:url(./reina.png); background-repeat:no-repeat; background-size: cover;";
-            
-        }
-    </script>
+    <title>Mi Currículum en Línea</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <table id="tabla_ajedrez">
-        <tr>
-            <td onclick="celdaclick(this)"> </td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-        </tr>
+    <header>
+        <div class="container">
+            <h1>[Tu Nombre]</h1>
+            <p>Desarrollador Web | Diseñador | Profesional en [Tu Área]</p>
+        </div>
+    </header>
 
-        <tr>
-            
-            <td ></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-        </tr>
-        <tr>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-        </tr>
-        <tr>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-        </tr>
-        <tr>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-        </tr>
-        <tr>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-        </tr>
-        <tr>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-        </tr>
-        <tr>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-            <td onclick="celdaclick(this)"></td>
-        </tr>
-    </table>
-    <div id="div_contador">
-        reinas colocadas: 0
-    </div>
-    <button onclick="simulacion()">
-        Simulación
-    </button>
-    <button onclick="reiniciar(0)">
-        Reiniciar
-    </button>
-    <button onclick="solucion1()">
-        Solución 1
-    </button>
-    <button onclick="solucion2()">
-        Solución 2
-    </button>
+    <section id="about" class="container">
+        <h2>Sobre Mí</h2>
+        <p>
+            ¡Hola! Soy [Tu Nombre], un apasionado [tu profesión o área de expertise] con experiencia en [breve descripción de tu experiencia]. 
+            Me especializo en [tus habilidades principales] y disfruto crear soluciones innovadoras y eficientes.
+        </p>
+    </section>
 
+    <section id="experience" class="container">
+        <h2>Experiencia</h2>
+        <div class="experience-item">
+            <h3>Desarrollador Web en [Empresa]</h3>
+            <p class="date">Enero 2021 - Presente</p>
+            <p>
+                Responsable del desarrollo y mantenimiento de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript y React.
+            </p>
+        </div>
+        <div class="experience-item">
+            <h3>Diseñador UI/UX en [Empresa]</h3>
+            <p class="date">Junio 2019 - Diciembre 2020</p>
+            <p>
+                Diseño de interfaces de usuario y experiencia de usuario para aplicaciones móviles y web.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="container">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>React, Node.js</li>
+            <li>Diseño UI/UX</li>
+            <li>Gestión de proyectos</li>
+            <li>Inglés avanzado</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Proyectos</h2>
+        <div class="project-item">
+            <h3>Portafolio Personal</h3>
+            <p>
+                Desarrollo de un portafolio en línea para mostrar mis proyectos y habilidades.
+            </p>
+            <a href="#" class="btn">Ver Proyecto</a>
+        </div>
+        <div class="project-item">
+            <h3>Aplicación de Tareas</h3>
+            <p>
+                Creación de una aplicación web para gestionar tareas diarias utilizando React.
+            </p>
+            <a href="#" class="btn">Ver Proyecto</a>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contacto</h2>
+        <form id="contactForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit" class="btn">Enviar Mensaje</button>
+        </form>
+        <p id="confirmationMessage" class="hidden">¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.</p>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 [Tu Nombre]. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
