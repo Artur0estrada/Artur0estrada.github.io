@@ -4,94 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Currículum en Línea</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="container">
+        <header class="mb-4">
             <h1>[Tu Nombre]</h1>
             <p>Desarrollador Web | Diseñador | Profesional en [Tu Área]</p>
-        </div>
-    </header>
+        </header>
 
-    <section id="about" class="container">
-        <h2>Sobre Mí</h2>
-        <p>
-            ¡Hola! Soy [Tu Nombre], un apasionado [tu profesión o área de expertise] con experiencia en [breve descripción de tu experiencia]. 
-            Me especializo en [tus habilidades principales] y disfruto crear soluciones innovadoras y eficientes.
-        </p>
-    </section>
-
-    <section id="experience" class="container">
-        <h2>Experiencia</h2>
-        <div class="experience-item">
-            <h3>Desarrollador Web en [Empresa]</h3>
-            <p class="date">Enero 2021 - Presente</p>
+        <section id="about" class="mb-4">
+            <h2 class="section-title">Sobre Mí</h2>
             <p>
-                Responsable del desarrollo y mantenimiento de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript y React.
+                ¡Hola! Soy [Tu Nombre], un apasionado [tu profesión o área de expertise] con experiencia en [breve descripción de tu experiencia]. 
+                Me especializo en [tus habilidades principales] y disfruto crear soluciones innovadoras y eficientes.
             </p>
-        </div>
-        <div class="experience-item">
-            <h3>Diseñador UI/UX en [Empresa]</h3>
-            <p class="date">Junio 2019 - Diciembre 2020</p>
-            <p>
-                Diseño de interfaces de usuario y experiencia de usuario para aplicaciones móviles y web.
-            </p>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="container">
-        <h2>Habilidades</h2>
-        <ul>
-            <li>HTML, CSS, JavaScript</li>
-            <li>React, Node.js</li>
-            <li>Diseño UI/UX</li>
-            <li>Gestión de proyectos</li>
-            <li>Inglés avanzado</li>
-        </ul>
-    </section>
+        <section id="experience" class="mb-4">
+            <h2 class="section-title">Experiencia</h2>
+            <div class="job">
+                <h4>Desarrollador Web en [Empresa]</h4>
+                <p class="date">Enero 2021 - Presente</p>
+                <ul>
+                    <li>Responsable del desarrollo y mantenimiento de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript y React.</li>
+                    <li>Colaboración en equipos ágiles para entregar proyectos en tiempo y forma.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h4>Diseñador UI/UX en [Empresa]</h4>
+                <p class="date">Junio 2019 - Diciembre 2020</p>
+                <ul>
+                    <li>Diseño de interfaces de usuario y experiencia de usuario para aplicaciones móviles y web.</li>
+                    <li>Creación de prototipos y pruebas de usabilidad.</li>
+                </ul>
+            </div>
+        </section>
 
-    <section id="projects" class="container">
-        <h2>Proyectos</h2>
-        <div class="project-item">
-            <h3>Portafolio Personal</h3>
-            <p>
-                Desarrollo de un portafolio en línea para mostrar mis proyectos y habilidades.
-            </p>
-            <a href="#" class="btn">Ver Proyecto</a>
-        </div>
-        <div class="project-item">
-            <h3>Aplicación de Tareas</h3>
-            <p>
-                Creación de una aplicación web para gestionar tareas diarias utilizando React.
-            </p>
-            <a href="#" class="btn">Ver Proyecto</a>
-        </div>
-    </section>
+        <section id="skills" class="mb-4">
+            <h2 class="section-title">Habilidades</h2>
+            <div>
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Diseño UI/UX</span>
+                <span class="tech-tag">Inglés Avanzado</span>
+            </div>
+        </section>
 
-    <section id="contact" class="container">
-        <h2>Contacto</h2>
-        <form id="contactForm">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
+        <section id="projects" class="mb-4">
+            <h2 class="section-title">Proyectos</h2>
+            <div class="project">
+                <h4>Portafolio Personal</h4>
+                <p>
+                    Desarrollo de un portafolio en línea para mostrar mis proyectos y habilidades.
+                </p>
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+            </div>
+            <div class="project">
+                <h4>Aplicación de Tareas</h4>
+                <p>
+                    Creación de una aplicación web para gestionar tareas diarias utilizando React.
+                </p>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+            </div>
+        </section>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <section id="contact" class="mb-4">
+            <h2 class="section-title">Contacto</h2>
+            <form id="contactForm">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
 
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" required></textarea>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-            <button type="submit" class="btn">Enviar Mensaje</button>
-        </form>
-        <p id="confirmationMessage" class="hidden">¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.</p>
-    </section>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
 
-    <footer>
-        <div class="container">
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+            <p id="confirmationMessage" class="hidden">¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.</p>
+        </section>
+
+        <footer class="my-4">
             <p>&copy; 2023 [Tu Nombre]. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
