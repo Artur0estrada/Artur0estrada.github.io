@@ -1,6 +1,50 @@
 // Animaciones con Intersection Observer
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Contador regresivo
+    // IMPORTANTE: Cambia esta fecha por la fecha real de tu boda
+    const fechaBoda = new Date('2026-04-18T17:00:00').getTime();
+    
+    function actualizarContador() {
+        const ahora = new Date().getTime();
+        const diferencia = fechaBoda - ahora;
+        
+        // Calcular días, horas, minutos y segundos
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+        
+        // Actualizar el DOM
+        const diasEl = document.getElementById('dias');
+        const horasEl = document.getElementById('horas');
+        const minutosEl = document.getElementById('minutos');
+        const segundosEl = document.getElementById('segundos');
+        
+        if (diasEl) diasEl.textContent = dias >= 0 ? dias : 0;
+        if (horasEl) horasEl.textContent = horas >= 0 ? horas : 0;
+        if (minutosEl) minutosEl.textContent = minutos >= 0 ? minutos : 0;
+        if (segundosEl) segundosEl.textContent = segundos >= 0 ? segundos : 0;
+        
+        // Cuando llegue el día
+        if (diferencia < 0) {
+            clearInterval(intervaloContador);
+            const countdownContainer = document.querySelector('.countdown-container');
+            if (countdownContainer) {
+                countdownContainer.innerHTML = `
+                    <div class="countdown-finalizado">
+                        <h3>¡Es hoy!</h3>
+                        <p>El día ha llegado 💐</p>
+                    </div>
+                `;
+            }
+        }
+    }
+    
+    // Iniciar el contador
+    const intervaloContador = setInterval(actualizarContador, 1000);
+    actualizarContador(); // Ejecutar inmediatamente
+
     // Smooth scroll para enlaces internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -40,8 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Contador regresivo opcional (descomentar y ajustar fecha si lo deseas)
-    /*
-    const fechaBoda = new Date('2024-06-15T17:00:00').getTime();
+    
+    //const fechaBoda = new Date('2024-06-15T17:00:00').getTime();
     
     function actualizarContador() {
         const ahora = new Date().getTime();
@@ -63,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const intervalo = setInterval(actualizarContador, 1000);
     actualizarContador();
-    */
+    
 
     // Efecto parallax sutil en el hero
     window.addEventListener('scroll', () => {
@@ -105,6 +149,61 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
+    }
+
+    // Detectar si es iOS o Android para optimizar enlaces de mapas
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isIOS = /iphone|ipad|ipod/.test(userAgent);
+    const isAndroid = /android/.test(userAgent);
+
+    // Ajustar botones de mapas según el dispositivo
+    const btnGoogle = document.querySelector('.btn-google');
+    const btnApple = document.querySelector('.btn-apple');
+    const btnWaze = document.querySelector('.btn-waze');
+
+    if (isIOS && btnApple) {
+        // En iOS, dar prioridad a Apple Maps
+        btnApple.style.order = '-1';
+    } else if (btnApple) {
+        // En otros dispositivos, ocultar Apple Maps o dejarlo al final
+        btnApple.style.opacity = '0.7';
+    }
+
+    // Función para compartir ubicación
+    const compartirUbicacion = document.createElement('button');
+    compartirUbicacion.className = 'btn-mapa btn-compartir';
+    compartirUbicacion.innerHTML = '📤 Compartir Ubicación';
+    compartirUbicacion.style.background = 'var(--color-sage)';
+    compartirUbicacion.style.border = 'none';
+    compartirUbicacion.style.cursor = 'pointer';
+
+    compartirUbicacion.addEventListener('click', async () => {
+        const textoCompartir = 'Jardín Los Olivos - Av. de las Flores #456, Jardines del Valle, Hermosillo, Sonora';
+        const urlMapa = btnGoogle ? btnGoogle.href : '';
+
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: 'Ubicación de la Boda',
+                    text: textoCompartir,
+                    url: urlMapa
+                });
+            } catch (err) {
+                console.log('Error al compartir:', err);
+            }
+        } else {
+            // Fallback: copiar al portapapeles
+            navigator.clipboard.writeText(`${textoCompartir}\n${urlMapa}`);
+            compartirUbicacion.innerHTML = '✓ Ubicación Copiada';
+            setTimeout(() => {
+                compartirUbicacion.innerHTML = '📤 Compartir Ubicación';
+            }, 2000);
+        }
+    });
+
+    const mapaBotones = document.querySelector('.mapa-botones');
+    if (mapaBotones) {
+        mapaBotones.appendChild(compartirUbicacion);
     }
 
     // Función para copiar dirección al portapapeles
@@ -172,4 +271,4 @@ function crearParticulas() {
 }
 
 // Inicializar partículas (opcional - descomentado si lo deseas)
-// crearParticulas();
+ crearParticulas();
