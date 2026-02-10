@@ -222,6 +222,46 @@ document.addEventListener('DOMContentLoaded', function() {
     if (mapaBotones) {
         mapaBotones.appendChild(compartirUbicacion);
     }
+
+    // ========================================
+    // COPIAR NÚMERO DE CUENTA
+    // ========================================
+    const btnCopiarCuenta = document.getElementById('btnCopiarCuenta');
+    const numeroCuenta = document.getElementById('numeroCuenta');
+    
+    if (btnCopiarCuenta && numeroCuenta) {
+        btnCopiarCuenta.addEventListener('click', function() {
+            const textoNumero = numeroCuenta.textContent.trim();
+            
+            navigator.clipboard.writeText(textoNumero).then(() => {
+                // Feedback visual
+                const textoOriginal = btnCopiarCuenta.textContent;
+                btnCopiarCuenta.textContent = '✓ Número Copiado';
+                btnCopiarCuenta.style.background = 'linear-gradient(135deg, var(--color-gold), #B8944D)';
+                
+                setTimeout(() => {
+                    btnCopiarCuenta.textContent = textoOriginal;
+                    btnCopiarCuenta.style.background = '';
+                }, 2500);
+            }).catch(err => {
+                console.error('Error al copiar:', err);
+            });
+        });
+        
+        // También permitir copiar haciendo clic en el número
+        numeroCuenta.addEventListener('click', function() {
+            const textoNumero = this.textContent.trim();
+            
+            navigator.clipboard.writeText(textoNumero).then(() => {
+                const original = this.textContent;
+                this.textContent = '✓ Copiado';
+                
+                setTimeout(() => {
+                    this.textContent = original;
+                }, 2000);
+            });
+        });
+    }
 });
 
 // ========================================
