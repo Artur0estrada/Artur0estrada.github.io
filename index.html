@@ -786,44 +786,121 @@
         
         <div class="hero-content">
             <div class="iniciales">
-                L <span class="ampersand">&</span> J
+                M <span class="ampersand">&</span> A
             </div>
-            <h1 class="nombres">Luz & Jesus</h1>
-            <p class="fecha-principal">18 DE ABRIL, 2026</p>
+            <h1 class="nombres">María & Alejandro</h1>
+            <p class="fecha-principal">15 DE JUNIO, 2024</p>
             <div class="separador"></div>
             <p class="frase">Con la bendición de nuestras familias, te invitamos a celebrar nuestro amor</p>
+            
+            <!-- Contador Regresivo -->
+            <div class="countdown-container">
+                <p class="countdown-titulo">Faltan</p>
+                <div id="countdown" class="countdown">
+                    <div class="countdown-item">
+                        <span id="dias" class="countdown-numero">0</span>
+                        <span class="countdown-label">Días</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="horas" class="countdown-numero">0</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutos" class="countdown-numero">0</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="segundos" class="countdown-numero">0</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Eventos -->
     <section class="seccion">
         <h2 class="seccion-titulo">Celebración</h2>
-       <!----
+        
         <div class="eventos">
             <div class="evento">
-                <div class="evento-icono">⛪</div>
+                <div class="evento-icono">
+                    <img src="imagenes/icono-iglesia.png" alt="Ceremonia" class="icono-img">
+                </div>
                 <h3 class="evento-nombre">Ceremonia</h3>
                 <p class="evento-hora">17:00 hrs</p>
-                <p class="evento-lugar">Hacienda Napoles</p>
-                <p class="evento-direccion">Heroica ciudad De<br>Ures</p>
+                <p class="evento-lugar">Iglesia de San Miguel Arcángel</p>
+                <p class="evento-direccion">Calle Principal #123<br>Centro Histórico</p>
             </div>
-        -->
+
             <div class="evento">
-                <div class="evento-icono">🥂</div>
+                <div class="evento-icono">
+                    <img src="imagenes/icono-copas.png" alt="Recepción" class="icono-img">
+                </div>
                 <h3 class="evento-nombre">Recepción</h3>
                 <p class="evento-hora">19:00 hrs</p>
-                <p class="evento-lugar">Hacienda Napoles</p>
-                <p class="evento-direccion">Heroica ciudad De<br>Ures</p>
+                <p class="evento-lugar">Jardín Los Olivos</p>
+                <p class="evento-direccion">Av. de las Flores #456<br>Jardines del Valle</p>
             </div>
-<!--
+
             <div class="evento">
-                <div class="evento-icono">💃</div>
+                <div class="evento-icono">
+                    <img src="imagenes/icono-fiesta.png" alt="Fiesta" class="icono-img">
+                </div>
                 <h3 class="evento-nombre">Fiesta</h3>
                 <p class="evento-hora">21:00 hrs</p>
                 <p class="evento-lugar">Salón Imperial</p>
                 <p class="evento-direccion">Mismo lugar de la recepción<br>¡Prepárate para bailar!</p>
             </div>
-        -->
+        </div>
+    </section>
+
+    <!-- Galería de Fotos -->
+    <section class="seccion galeria-section">
+        <h2 class="seccion-titulo">Nuestra Historia</h2>
+        
+        <div class="galeria">
+            <div class="foto-item foto-grande">
+                <img src="imagenes/foto1.jpg" alt="Foto de la pareja" class="foto-img">
+                <div class="foto-overlay">
+                    <p class="foto-caption">Nuestro primer encuentro</p>
+                </div>
+            </div>
+            
+            <div class="foto-item">
+                <img src="imagenes/foto2.jpg" alt="Foto de la pareja" class="foto-img">
+                <div class="foto-overlay">
+                    <p class="foto-caption">Viajando juntos</p>
+                </div>
+            </div>
+            
+            <div class="foto-item">
+                <img src="imagenes/foto3.jpg" alt="Foto de la pareja" class="foto-img">
+                <div class="foto-overlay">
+                    <p class="foto-caption">La propuesta</p>
+                </div>
+            </div>
+            
+            <div class="foto-item foto-horizontal">
+                <img src="imagenes/foto4.jpg" alt="Foto de la pareja" class="foto-img">
+                <div class="foto-overlay">
+                    <p class="foto-caption">Preparando el gran día</p>
+                </div>
+            </div>
+            
+            <div class="foto-item">
+                <img src="imagenes/foto5.jpg" alt="Foto de la pareja" class="foto-img">
+                <div class="foto-overlay">
+                    <p class="foto-caption">Felices juntos</p>
+                </div>
+            </div>
+            
+            <div class="foto-item">
+                <img src="imagenes/foto6.jpg" alt="Foto de la pareja" class="foto-img">
+                <div class="foto-overlay">
+                    <p class="foto-caption">Amor eterno</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -833,24 +910,29 @@
         
         <div class="mapa-container">
             <div class="mapa-info">
-                <h3 class="mapa-lugar">Hacienda Napoles, Ures</h3>
+                <h3 class="mapa-lugar">Jardín Los Olivos</h3>
                 <p class="mapa-direccion">
                     <strong>Dirección:</strong><br>
-                    Hacienda Napoles<br>
-                    <br>
-                    Ures, Sonora
+                    Av. de las Flores #456<br>
+                    Jardines del Valle<br>
+                    Hermosillo, Sonora
                 </p>
                 
                 <div class="mapa-botones">
-                    <a href="https://www.google.com/maps/place/Hacienda+Quinta+Napoles/@29.4198979,-110.4039006,16z/"
+                    <a href="https://www.google.com/maps/search/?api=1&query=Jardin+Los+Olivos+Hermosillo" 
                        target="_blank" 
                        class="btn-mapa btn-google">
                         📍 Abrir en Google Maps
                     </a>
-                    <a href="https://maps.apple.com/place?place-id=ICFA60D00B5D5A5B7&address=84907+Ures%2C+Son.%2C+Mexico&coordinate=29.4241379%2C-110.40271&name=Hacienda+Quinta+N%C3%A1poles&_provider=9902" 
+                    <a href="https://maps.apple.com/?q=Jardin+Los+Olivos+Hermosillo" 
                        target="_blank" 
                        class="btn-mapa btn-apple">
                         🗺️ Abrir en Apple Maps
+                    </a>
+                    <a href="https://waze.com/ul?q=Jardin+Los+Olivos+Hermosillo" 
+                       target="_blank" 
+                       class="btn-mapa btn-waze">
+                        🚗 Abrir en Waze
                     </a>
                 </div>
 
@@ -874,7 +956,7 @@
                      5. Copia el código iframe y pégalo aquí
                 -->
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6950.608835644798!2d-110.4039006343191!3d29.41989793230635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce5235fa9b48f1%3A0xbf1ffa586bef1650!2sHacienda%20Quinta%20Napoles!5e0!3m2!1ses-419!2smx!4v1770688124896!5m2!1ses-419!2smx">
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3478.4!2d-110.9559!3d29.0729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDA0JzIyLjQiTiAxMTDCsDU3JzIxLjIiVw!5e0!3m2!1ses!2smx!4v1234567890" 
                     width="100%" 
                     height="100%" 
                     style="border:0;" 
@@ -890,7 +972,7 @@
     <section class="vestimenta">
         <div class="vestimenta-contenido">
             <h2>Código de Vestimenta</h2>
-            <p>Etiqueta formal / All Black<br>Los invitamos a vestir de NEGRO TOTAL para esta ocasión especial</p>
+            <p>Etiqueta formal / Cocktail<br>Los invitamos a vestir elegantes para esta ocasión especial</p>
         </div>
     </section>
 
@@ -898,9 +980,9 @@
     <section class="confirmacion">
         <div class="confirmacion-contenido">
             <h2 class="seccion-titulo">Confirmación</h2>
-            <p style="margin-bottom: 1rem; line-height: 1.8;">Tu presencia es nuestro mejor regalo. Por favor, confirma tu asistencia antes de.</p>
+            <p style="margin-bottom: 1rem; line-height: 1.8;">Tu presencia es nuestro mejor regalo. Por favor, confirma tu asistencia antes del 1 de junio.</p>
             <a href="#" class="btn-confirmar">CONFIRMAR ASISTENCIA</a>
-            <p class="fecha-limite">Fecha límite: fecha limite</p>
+            <p class="fecha-limite">Fecha límite: 1 de junio, 2024</p>
         </div>
     </section>
 
@@ -908,7 +990,7 @@
     <footer class="footer">
         <div class="footer-ornamento">❦</div>
         <p>Esperamos celebrar este día tan especial contigo<br>
-        Con amor, Luz & Jesus</p>
+        Con amor, María & Alejandro</p>
     </footer>
 
     <script src="boda.js"></script>

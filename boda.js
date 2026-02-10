@@ -84,8 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Contador regresivo opcional (descomentar y ajustar fecha si lo deseas)
-    
-    //const fechaBoda = new Date('2024-06-15T17:00:00').getTime();
+    /*
+    const fechaBoda = new Date('2024-06-15T17:00:00').getTime();
     
     function actualizarContador() {
         const ahora = new Date().getTime();
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const intervalo = setInterval(actualizarContador, 1000);
     actualizarContador();
-    
+    */
 
     // Efecto parallax sutil en el hero
     window.addEventListener('scroll', () => {
@@ -271,4 +271,4 @@ function crearParticulas() {
 }
 
 // Inicializar partículas (opcional - descomentado si lo deseas)
- crearParticulas();
+// crearParticulas();
