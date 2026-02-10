@@ -2,8 +2,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // Contador regresivo
-    // IMPORTANTE: Cambia esta fecha por la fecha real de tu boda
-    const fechaBoda = new Date('2026-04-18T17:00:00').getTime();
+    // ⚠️ IMPORTANTE: Cambia esta fecha por la fecha REAL de tu boda
+    // Formato: 'AÑO-MES-DÍATHORA:MINUTOS:00'
+    // Ejemplo actual es 15 de junio de 2026 a las 5:00 PM
+    const fechaBoda = new Date('2026-06-15T17:00:00').getTime();
     
     function actualizarContador() {
         const ahora = new Date().getTime();
@@ -84,9 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Contador regresivo opcional (descomentar y ajustar fecha si lo deseas)
-
-    // const fechaBoda = new Date('2024-06-15T17:00:00').getTime();
-
+    /*
+    const fechaBoda = new Date('2024-06-15T17:00:00').getTime();
+    
     function actualizarContador() {
         const ahora = new Date().getTime();
         const diferencia = fechaBoda - ahora;
@@ -107,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const intervalo = setInterval(actualizarContador, 1000);
     actualizarContador();
-    
+    */
 
     // Efecto parallax sutil en el hero
     window.addEventListener('scroll', () => {
@@ -178,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     compartirUbicacion.style.cursor = 'pointer';
 
     compartirUbicacion.addEventListener('click', async () => {
-        const textoCompartir = 'Jardín Los Olivos - Av. de las Flores #456, Jardines del Valle, Hermosillo, Sonora';
+        const textoCompartir = 'Hacienda Quinta Napoles - Heroica Ciudad de Ures, Sonora, México';
         const urlMapa = btnGoogle ? btnGoogle.href : '';
 
         if (navigator.share) {
@@ -271,4 +273,4 @@ function crearParticulas() {
 }
 
 // Inicializar partículas (opcional - descomentado si lo deseas)
-// crearParticulas();
+ crearParticulas();
