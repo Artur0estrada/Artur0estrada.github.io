@@ -1,11 +1,13 @@
 // Animaciones con Intersection Observer
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Contador regresivo
+    // ========================================
+    // CONTADOR REGRESIVO
+    // ========================================
     // ⚠️ IMPORTANTE: Cambia esta fecha por la fecha REAL de tu boda
     // Formato: 'AÑO-MES-DÍATHORA:MINUTOS:00'
-    // Ejemplo actual es 15 de junio de 2026 a las 5:00 PM
-    const fechaBoda = new Date('2026-06-15T17:00:00').getTime();
+    // Ejemplo: '2024-12-25T18:00:00' = 25 de diciembre 2024 a las 6:00 PM
+    const fechaBoda = new Date('2026-04-18T17:00:00').getTime();
     
     function actualizarContador() {
         const ahora = new Date().getTime();
@@ -47,7 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const intervaloContador = setInterval(actualizarContador, 1000);
     actualizarContador(); // Ejecutar inmediatamente
 
-    // Smooth scroll para enlaces internos
+    // ========================================
+    // SMOOTH SCROLL
+    // ========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -61,7 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Observador para animaciones al hacer scroll
+    // ========================================
+    // ANIMACIONES AL HACER SCROLL
+    // ========================================
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -85,7 +91,9 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(evento);
     });
 
-    // Efecto parallax sutil en el hero
+    // ========================================
+    // EFECTO PARALLAX EN EL HERO
+    // ========================================
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const hero = document.querySelector('.hero');
@@ -95,7 +103,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Prevenir envío del formulario si tienes uno
+    // ========================================
+    // BOTÓN DE CONFIRMACIÓN
+    // ========================================
     const btnConfirmar = document.querySelector('.btn-confirmar');
     if (btnConfirmar) {
         btnConfirmar.addEventListener('click', function(e) {
@@ -106,7 +116,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Animación de entrada para los ornamentos
+    // ========================================
+    // ANIMACIÓN DE ORNAMENTOS FLOTANTES
+    // ========================================
     const ornamentos = document.querySelectorAll('.ornamento-flotante');
     ornamentos.forEach((ornamento, index) => {
         setTimeout(() => {
@@ -114,7 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000 + (index * 500));
     });
 
-    // Efecto hover en las tarjetas de eventos (solo desktop)
+    // ========================================
+    // EFECTOS HOVER EN EVENTOS (SOLO DESKTOP)
+    // ========================================
     if (window.innerWidth > 768) {
         eventos.forEach(evento => {
             evento.addEventListener('mouseenter', function() {
@@ -127,12 +141,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Detectar si es iOS o Android para optimizar enlaces de mapas
+    // ========================================
+    // COPIAR DIRECCIÓN AL PORTAPAPELES
+    // ========================================
+    const direcciones = document.querySelectorAll('.evento-direccion');
+    direcciones.forEach(direccion => {
+        direccion.style.cursor = 'pointer';
+        direccion.title = 'Click para copiar la dirección';
+        
+        direccion.addEventListener('click', function() {
+            const texto = this.innerText;
+            navigator.clipboard.writeText(texto).then(() => {
+                // Feedback visual
+                const original = this.innerHTML;
+                this.innerHTML = '✓ Dirección copiada';
+                this.style.color = 'var(--color-sage)';
+                
+                setTimeout(() => {
+                    this.innerHTML = original;
+                    this.style.color = '';
+                }, 2000);
+            });
+        });
+    });
+
+    // ========================================
+    // OPTIMIZACIÓN DE ENLACES DE MAPAS
+    // ========================================
     const userAgent = navigator.userAgent.toLowerCase();
     const isIOS = /iphone|ipad|ipod/.test(userAgent);
     const isAndroid = /android/.test(userAgent);
 
-    // Ajustar botones de mapas según el dispositivo
     const btnGoogle = document.querySelector('.btn-google');
     const btnApple = document.querySelector('.btn-apple');
     const btnWaze = document.querySelector('.btn-waze');
@@ -145,7 +184,9 @@ document.addEventListener('DOMContentLoaded', function() {
         btnApple.style.opacity = '0.7';
     }
 
-    // Función para compartir ubicación
+    // ========================================
+    // BOTÓN COMPARTIR UBICACIÓN
+    // ========================================
     const compartirUbicacion = document.createElement('button');
     compartirUbicacion.className = 'btn-mapa btn-compartir';
     compartirUbicacion.innerHTML = '📤 Compartir Ubicación';
@@ -181,31 +222,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (mapaBotones) {
         mapaBotones.appendChild(compartirUbicacion);
     }
-
-    // Función para copiar dirección al portapapeles
-    const direcciones = document.querySelectorAll('.evento-direccion');
-    direcciones.forEach(direccion => {
-        direccion.style.cursor = 'pointer';
-        direccion.title = 'Click para copiar la dirección';
-        
-        direccion.addEventListener('click', function() {
-            const texto = this.innerText;
-            navigator.clipboard.writeText(texto).then(() => {
-                // Feedback visual
-                const original = this.innerHTML;
-                this.innerHTML = '✓ Dirección copiada';
-                this.style.color = 'var(--color-sage)';
-                
-                setTimeout(() => {
-                    this.innerHTML = original;
-                    this.style.color = '';
-                }, 2000);
-            });
-        });
-    });
 });
 
-// Lazy loading para imágenes (si agregas imágenes posteriormente)
+// ========================================
+// LAZY LOADING PARA IMÁGENES
+// ========================================
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -221,30 +242,3 @@ if ('IntersectionObserver' in window) {
     const images = document.querySelectorAll('img.lazy');
     images.forEach(img => imageObserver.observe(img));
 }
-
-// Función para añadir partículas decorativas (opcional)
-function crearParticulas() {
-    const container = document.querySelector('.hero');
-    if (!container) return;
-    
-    for (let i = 0; i < 20; i++) {
-        const particula = document.createElement('div');
-        particula.style.position = 'absolute';
-        particula.style.width = Math.random() * 4 + 'px';
-        particula.style.height = particula.style.width;
-        particula.style.background = 'var(--color-gold)';
-        particula.style.borderRadius = '50%';
-        particula.style.opacity = Math.random() * 0.3;
-        particula.style.left = Math.random() * 100 + '%';
-        particula.style.top = Math.random() * 100 + '%';
-        particula.style.animation = `float ${Math.random() * 10 + 5}s ease-in-out infinite`;
-        particula.style.animationDelay = Math.random() * 5 + 's';
-        particula.style.pointerEvents = 'none';
-        
-        // Descomentar para activar partículas
-        // container.appendChild(particula);
-    }
-}
-
-// Inicializar partículas (opcional - descomentado si lo deseas)
- crearParticulas();
